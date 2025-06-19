@@ -3,10 +3,6 @@
 
 import PackageDescription
 
-let enableLibraryEvolution: [SwiftSetting] = [
-    .unsafeFlags(["-enable-library-evolution"])
-]
-
 let package = Package(
     name: "MyDependencies",
     platforms: [
@@ -57,7 +53,7 @@ let package = Package(
         // Network
         .package(
             url: "https://github.com/Alamofire/Alamofire.git",
-            .upToNextMajor(from: "5.10.0")
+            from: "5.10.1"
         ),
 //        .package(
 //            url: "https://github.com/onevcat/Kingfisher.git",
@@ -140,31 +136,27 @@ let package = Package(
                 "LoggingDependencies",
                 "DatabaseDependencies",
                 "DevelopmentDependencies",
-            ],
-            swiftSettings: enableLibraryEvolution
+            ]
         ),
         .target(
             name: "NetworkDependencies",
             dependencies: [
 //                "Kingfisher",
                 "Alamofire"
-            ],
-            swiftSettings: enableLibraryEvolution
+            ]
         ),
         .target(
             name: "SecurityDependencies",
             dependencies: [
                 "CryptoSwift",
                 .product(name: "KeychainSwift", package: "keychain-swift")
-            ],
-            swiftSettings: enableLibraryEvolution
+            ]
         ),
         .target(
             name: "LoggingDependencies",
             dependencies: [
                 "SwiftyBeaver"
-            ],
-            swiftSettings: enableLibraryEvolution
+            ]
         ),
         .target(
             name: "UIDependencies",
@@ -174,8 +166,7 @@ let package = Package(
                 "PanModal",
                 "SkeletonView",
                 "TagListView"
-            ],
-            swiftSettings: enableLibraryEvolution
+            ]
         ),
         .target(
             name: "UtilityDependencies",
@@ -183,22 +174,19 @@ let package = Package(
 //                .product(name: "IQKeyboardManagerSwift", package: "IQKeyboardManager"),
                 "RxSwift",
 //                .product(name: "PusherSwift", package: "pusher-websocket-swift")
-            ],
-            swiftSettings: enableLibraryEvolution
+            ]
         ),
         .target(
             name: "DatabaseDependencies",
             dependencies: [
                 .product(name: "RealmSwift", package: "realm-swift")
-            ],
-            swiftSettings: enableLibraryEvolution
+            ]
         ),
         .target(
             name: "DevelopmentDependencies",
             dependencies: [
                 "netfox"
-            ],
-            swiftSettings: enableLibraryEvolution
+            ]
         )
     ]
 )
