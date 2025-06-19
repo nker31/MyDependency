@@ -8,7 +8,7 @@
 import Foundation
 
 @_exported import Toast
-@_exported import Lottie
+//@_exported import Lottie
 @_exported import PanModal
 @_exported import SkeletonView
 @_exported import TagListView

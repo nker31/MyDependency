@@ -10,7 +10,7 @@ let enableLibraryEvolution: [SwiftSetting] = [
 let package = Package(
     name: "MyDependencies",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v12)
     ],
     products: [
         .library(
@@ -59,10 +59,10 @@ let package = Package(
             url: "https://github.com/Alamofire/Alamofire.git",
             .upToNextMajor(from: "5.10.0")
         ),
-        .package(
-            url: "https://github.com/onevcat/Kingfisher.git",
-            from: "8.3.2"
-        ),
+//        .package(
+//            url: "https://github.com/onevcat/Kingfisher.git",
+//            from: "8.3.2"
+//        ),
 
         // Security
         .package(
@@ -85,10 +85,10 @@ let package = Package(
             url: "https://github.com/scalessec/Toast-Swift.git",
             from: "5.1.1"
         ),
-        .package(
-            url: "https://github.com/airbnb/lottie-spm.git",
-            from: "4.5.2"
-        ),
+//        .package(
+//            url: "https://github.com/airbnb/lottie-spm.git",
+//            from: "4.5.2"
+//        ),
         .package(
             url: "https://github.com/slackhq/PanModal.git",
             from: "1.2.7"
@@ -103,18 +103,18 @@ let package = Package(
         ),
 
         // Utility
-        .package(
-            url: "https://github.com/hackiftekhar/IQKeyboardManager.git",
-            from: "6.5.16"
-        ),
+//        .package(
+//            url: "https://github.com/hackiftekhar/IQKeyboardManager.git",
+//            from: "6.5.16"
+//        ),
         .package(
             url: "https://github.com/ReactiveX/RxSwift.git",
             from: "6.8.0"
         ),
-        .package(
-            url: "https://github.com/pusher/pusher-websocket-swift.git",
-            from: "10.1.1"
-        ),
+//        .package(
+//            url: "https://github.com/pusher/pusher-websocket-swift.git",
+//            from: "10.1.1"
+//        ),
         
         // Database
         .package(
@@ -146,7 +146,7 @@ let package = Package(
         .target(
             name: "NetworkDependencies",
             dependencies: [
-                "Kingfisher",
+//                "Kingfisher",
                 "Alamofire"
             ],
             swiftSettings: enableLibraryEvolution
@@ -170,7 +170,7 @@ let package = Package(
             name: "UIDependencies",
             dependencies: [
                 .product(name: "Toast", package: "Toast-Swift"),
-                .product(name: "Lottie", package: "lottie-spm"),
+//                .product(name: "Lottie", package: "lottie-spm"),
                 "PanModal",
                 "SkeletonView",
                 "TagListView"
@@ -180,9 +180,9 @@ let package = Package(
         .target(
             name: "UtilityDependencies",
             dependencies: [
-                .product(name: "IQKeyboardManagerSwift", package: "IQKeyboardManager"),
+//                .product(name: "IQKeyboardManagerSwift", package: "IQKeyboardManager"),
                 "RxSwift",
-                .product(name: "PusherSwift", package: "pusher-websocket-swift")
+//                .product(name: "PusherSwift", package: "pusher-websocket-swift")
             ],
             swiftSettings: enableLibraryEvolution
         ),

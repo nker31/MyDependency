@@ -6,5 +6,5 @@
 //
 
 import Foundation
-@_exported import Kingfisher
+//@_exported import Kingfisher
 @_exported import Alamofire
